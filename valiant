@@ -727,6 +727,7 @@ Library.Sections.__index = Library.Sections;
     KeyList:SetVisible(true)
     return KeyList
 end
+end
 	-- // Color Picker Functions
 	do
 		function Library:NewPicker(name, default, defaultalpha, parent, count, flag, callback)
