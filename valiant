@@ -631,102 +631,102 @@ Library.Sections.__index = Library.Sections;
 		end;
 		-- 
 		function Library:KeybindList()
-			local KeyList = {Keybinds = {}};
-			Library.KeyList = KeyList
-			--
-			local KeyOutline = Instance.new('Frame', PlaceHolderUI)
-			local KeyInline = Instance.new('Frame', KeyOutline)
-			local KeyAccent = Instance.new('Frame', KeyInline)
-			local KeyHolder = Instance.new('Frame', KeyInline)
-			local UIListLayout = Instance.new('UIListLayout', KeyHolder)
-			local KeyTitle = Instance.new('TextLabel', KeyInline)
-			local LineThing = Instance.new('Frame', KeyInline)
-			--
-			KeyOutline.Name = "KeyOutline"
-			KeyOutline.Position = UDim2.new(0.01,0,0.5,0)
-			KeyOutline.BackgroundColor3 = Color3.new(0.1765,0.1765,0.1765)
-			KeyOutline.BorderColor3 = Color3.new(0.0392,0.0392,0.0392)
-			KeyOutline.AnchorPoint = NewVector2(0.009999999776482582,0.5)
-			KeyOutline.AutomaticSize = Enum.AutomaticSize.XY
-			--
-			KeyInline.Name = "KeyInline"
-			KeyInline.Position = UDim2.new(0,1,0,1)
-			KeyInline.Size = UDim2.new(0,-2,0,-2)
-			KeyInline.BackgroundColor3 = Color3.new(0.0745,0.0745,0.0745)
-			KeyInline.BorderSizePixel = 0
-			KeyInline.BorderColor3 = Color3.new(0,0,0)
-			KeyInline.AutomaticSize = Enum.AutomaticSize.XY
-			--
-			KeyAccent.Name = "KeyAccent"
-			KeyAccent.Size = UDim2.new(1,0,0,1)
-			KeyAccent.BackgroundColor3 = Library.Accent
-			KeyAccent.BorderSizePixel = 0
-			KeyAccent.BorderColor3 = Color3.new(0,0,0)
-			--
-			KeyHolder.Name = "KeyHolder"
-			KeyHolder.Position = UDim2.new(0,0,0,22)
-			KeyHolder.BackgroundColor3 = Color3.new(1,1,1)
-			KeyHolder.BackgroundTransparency = 1
-			KeyHolder.BorderSizePixel = 0
-			KeyHolder.BorderColor3 = Color3.new(0,0,0)
-			KeyHolder.AutomaticSize = Enum.AutomaticSize.XY
-			--
-			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-			--
-			KeyTitle.Name = "KeyTitle"
-			KeyTitle.Size = UDim2.new(1,0,0,20)
-			KeyTitle.BackgroundColor3 = Color3.new(1,1,1)
-			KeyTitle.BackgroundTransparency = 1
-			KeyTitle.BorderSizePixel = 0
-			KeyTitle.BorderColor3 = Color3.new(0,0,0)
-			KeyTitle.Text = "Keybinds"
-			KeyTitle.TextColor3 = Color3.new(1,1,1)
-			KeyTitle.FontFace = Enum.Font.Code
-			KeyTitle.TextSize = 12
-			KeyTitle.TextStrokeTransparency = 0
-			--
-			LineThing.Name = "LineThing"
-			LineThing.Position = UDim2.new(0,0,0,20)
-			LineThing.Size = UDim2.new(1,0,0,1)
-			LineThing.BackgroundColor3 = Color3.new(0.1765,0.1765,0.1765)
-			LineThing.BorderSizePixel = 0
-			LineThing.BorderColor3 = Color3.new(0,0,0)
-			-- Functions
-			function KeyList:SetVisible(State)
-				KeyOutline.Visible = State;
-			end;
-			--
-			function KeyList:NewKey(Name, Key, Mode)
-				local KeyValue = {}
-				--
-				local NewValue = Instance.new('TextLabel', KeyHolder)
-				--
-				NewValue.Name = "NewValue"
-				NewValue.Size = UDim2.new(0,0,0,15)
-				NewValue.BackgroundColor3 = Color3.new(1,1,1)
-				NewValue.BackgroundTransparency = 1
-				NewValue.BorderSizePixel = 0
-				NewValue.BorderColor3 = Color3.new(0,0,0)
-				NewValue.Text = tostring(" ["..Key.."] " .. Name .. " (" .. Mode ..") ")
-				NewValue.TextColor3 = Color3.new(1,1,1)
-				NewValue.FontFace = Enum.Font.Code
-				NewValue.TextSize = 12
-				NewValue.AutomaticSize = Enum.AutomaticSize.X
-				NewValue.TextXAlignment = Enum.TextXAlignment.Left
-				NewValue.Visible = false
-				--
-				function KeyValue:SetVisible(State)
-					NewValue.Visible = State;
-				end;
-				--
-				function KeyValue:Update(NewName, NewKey, NewMode)
-					NewValue.Text = tostring(" ["..NewName.."] " .. NewKey .. " (" .. NewMode ..") ")
-				end;
-				return KeyValue
-			end;
-			return KeyList
-		end
-	end
+    local KeyList = {Keybinds = {}};
+    Library.KeyList = KeyList
+    --
+    local KeyOutline = Instance.new('Frame', PlaceHolderUI)
+    local KeyInline = Instance.new('Frame', KeyOutline)
+    local KeyAccent = Instance.new('Frame', KeyInline)
+    local KeyHolder = Instance.new('Frame', KeyInline)
+    local UIListLayout = Instance.new('UIListLayout', KeyHolder)
+    local KeyTitle = Instance.new('TextLabel', KeyInline)
+    local LineThing = Instance.new('Frame', KeyInline)
+    --
+    KeyOutline.Name = "KeyOutline"
+    KeyOutline.Position = UDim2.new(0.01,0,0.5,0)
+    KeyOutline.BackgroundColor3 = Color3.new(0.1765,0.1765,0.1765)
+    KeyOutline.BorderColor3 = Color3.new(0.0392,0.0392,0.0392)
+    KeyOutline.AnchorPoint = Vector2.new(0.01, 0.5)
+    KeyOutline.Size = UDim2.new(0, 300, 0, 200) -- Явно задаем размер
+    KeyOutline.Visible = true -- Убедитесь, что он видим
+    --
+    KeyInline.Name = "KeyInline"
+    KeyInline.Position = UDim2.new(0, 1, 0, 1)
+    KeyInline.Size = UDim2.new(1, -2, 1, -2) -- Явно задаем размер
+    KeyInline.BackgroundColor3 = Color3.new(0.0745, 0.0745, 0.0745)
+    KeyInline.BorderSizePixel = 0
+    KeyInline.BorderColor3 = Color3.new(0, 0, 0)
+    --
+    KeyAccent.Name = "KeyAccent"
+    KeyAccent.Size = UDim2.new(1, 0, 0, 1)
+    KeyAccent.BackgroundColor3 = Library.Accent
+    KeyAccent.BorderSizePixel = 0
+    KeyAccent.BorderColor3 = Color3.new(0, 0, 0)
+    --
+    KeyHolder.Name = "KeyHolder"
+    KeyHolder.Position = UDim2.new(0, 0, 0, 22)
+    KeyHolder.BackgroundColor3 = Color3.new(1, 1, 1)
+    KeyHolder.BackgroundTransparency = 1
+    KeyHolder.BorderSizePixel = 0
+    KeyHolder.BorderColor3 = Color3.new(0, 0, 0)
+    KeyHolder.Size = UDim2.new(1, 0, 1, -40) -- Явно задаем размер
+    --
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    --
+    KeyTitle.Name = "KeyTitle"
+    KeyTitle.Size = UDim2.new(1, 0, 0, 20)
+    KeyTitle.BackgroundColor3 = Color3.new(1, 1, 1)
+    KeyTitle.BackgroundTransparency = 1
+    KeyTitle.BorderSizePixel = 0
+    KeyTitle.BorderColor3 = Color3.new(0, 0, 0)
+    KeyTitle.Text = "Keybinds"
+    KeyTitle.TextColor3 = Color3.new(1, 1, 1)
+    KeyTitle.FontFace = getgenv().custom_font
+    KeyTitle.TextSize = 12
+    KeyTitle.TextStrokeTransparency = 0
+    --
+    LineThing.Name = "LineThing"
+    LineThing.Position = UDim2.new(0, 0, 0, 20)
+    LineThing.Size = UDim2.new(1, 0, 0, 1)
+    LineThing.BackgroundColor3 = Color3.new(0.1765, 0.1765, 0.1765)
+    LineThing.BorderSizePixel = 0
+    LineThing.BorderColor3 = Color3.new(0, 0, 0)
+    -- Functions
+    function KeyList:SetVisible(State)
+        KeyOutline.Visible = State
+    end
+    --
+    function KeyList:NewKey(Name, Key, Mode)
+        local KeyValue = {}
+        --
+        local NewValue = Instance.new('TextLabel', KeyHolder)
+        --
+        NewValue.Name = "NewValue"
+        NewValue.Size = UDim2.new(1, 0, 0, 15)
+        NewValue.BackgroundColor3 = Color3.new(1, 1, 1)
+        NewValue.BackgroundTransparency = 1
+        NewValue.BorderSizePixel = 0
+        NewValue.BorderColor3 = Color3.new(0, 0, 0)
+        NewValue.Text = tostring(" ["..Key.."] " .. Name .. " (" .. Mode ..") ")
+        NewValue.TextColor3 = Color3.new(1, 1, 1)
+        NewValue.FontFace = getgenv().custom_font
+        NewValue.TextSize = 12
+        NewValue.TextXAlignment = Enum.TextXAlignment.Left
+        NewValue.Visible = false
+        --
+        function KeyValue:SetVisible(State)
+            NewValue.Visible = State
+        end
+        --
+        function KeyValue:Update(NewName, NewKey, NewMode)
+            NewValue.Text = tostring(" ["..NewName.."] " .. NewKey .. " (" .. NewMode ..") ")
+        end
+        return KeyValue
+    end
+    -- Убедитесь, что видимость активирована
+    KeyList:SetVisible(true)
+    return KeyList
+end
 	-- // Color Picker Functions
 	do
 		function Library:NewPicker(name, default, defaultalpha, parent, count, flag, callback)
