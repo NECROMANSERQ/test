@@ -681,7 +681,7 @@ Library.Sections.__index = Library.Sections;
 			KeyTitle.BorderColor3 = Color3.new(0,0,0)
 			KeyTitle.Text = "Keybinds"
 			KeyTitle.TextColor3 = Color3.new(1,1,1)
-			KeyTitle.FontFace = getgenv().custom_font
+			KeyTitle.FontFace = Enum.Font.Code
 			KeyTitle.TextSize = 12
 			KeyTitle.TextStrokeTransparency = 0
 			--
@@ -709,7 +709,7 @@ Library.Sections.__index = Library.Sections;
 				NewValue.BorderColor3 = Color3.new(0,0,0)
 				NewValue.Text = tostring(" ["..Key.."] " .. Name .. " (" .. Mode ..") ")
 				NewValue.TextColor3 = Color3.new(1,1,1)
-				NewValue.FontFace = getgenv().custom_font
+				NewValue.FontFace = Enum.Font.Code
 				NewValue.TextSize = 12
 				NewValue.AutomaticSize = Enum.AutomaticSize.X
 				NewValue.TextXAlignment = Enum.TextXAlignment.Left
